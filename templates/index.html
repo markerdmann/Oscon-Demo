@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>DotCloud OSCON Demo</title>
+        <link rel="stylesheet" href="static/stylesheets/base.css">
+        <link rel="stylesheet" href="static/stylesheets/skeleton.css">
+        <link rel="stylesheet" href="static/stylesheets/layout.css">
+        <script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAASZc5XFSRHdqlFJko20wLNBQaFhRn_MvlhKcbx_gC1-DeSXEjFhSwPWaXsjl2vZQSGitY9XUM5bQEHg"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type='text/javascript'>
+            function updateMessage() {
+                $.ajax({
+                    url: '/latest_message',
+                    success: function(response) {
+                        $('#textbox h1').text(response);
+                    }
+                })
+            }
+            setInterval('updateMessage()', 100);
+        </script>
+        <style>
+
+            body {
+                background: #2F2F2F;
+            }
+
+            div#textbox {
+                -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+                background: #202020;
+                top: 10%;
+                text-align: center;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                max-width: 500px;
+            }
+
+            h1 {
+                color: white;
+                padding: 50px;
+            }
+
+        </style>
+    </head>
+    <body style='background: #2F2F2F'>
+        <center><h1>Send an SMS to (415) 868-4919</h1></center>
+        <div id='textbox'>
+            <h1>Hello!</h1>
+        </div>
+    </body>
+</html>

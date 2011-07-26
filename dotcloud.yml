@@ -1,0 +1,4 @@
+www:
+    type: python
+redis:
+    type: redis
